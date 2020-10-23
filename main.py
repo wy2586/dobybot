@@ -1,5 +1,7 @@
 import discord
+import os
 import random
+
 
 client = discord.Client()
 
@@ -66,6 +68,7 @@ async def on_message(message):
         embed.add_field(name=f"이거 만든놈", value=f"discord : 민규#3269 \n필요한 기능 말해도 추가 안해줌", inline=False)
         await message.channel.send(embed=embed)
         print("봇정보 기능이 사용되었어!")
-
-
-client.run("NzY4NDE4NTI3OTgzNTY2ODU4.X5ALhQ.GVnOvZ-QFQVkUBFkYOP7Xblff0Y")
+        
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
